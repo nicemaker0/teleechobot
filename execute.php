@@ -15,9 +15,10 @@ $lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name']
 $username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
 $date = isset($message['date']) ? $message['date'] : "";
 
-$content2=file_get_contents("http://milkydad.ass.tw/nothing.php");
+//$content2=file_get_contents("http://milkydad.ass.tw/nothing.php");
 
-$text = isset($message['text']) ? $content2 : "";
+//$text = isset($message['text']) ? $content2 : "";
+$text = $firstname."你好";
 
 $text = trim($text);
 $text = strtolower($text);
