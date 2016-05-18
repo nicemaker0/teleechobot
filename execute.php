@@ -14,7 +14,10 @@ $firstname = isset($message['chat']['first_name']) ? $message['chat']['first_nam
 $lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name'] : "";
 $username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
 $date = isset($message['date']) ? $message['date'] : "";
-$text = isset($message['text']) ? "幹你娘" : "";
+
+$content2=file_get_contents("http://milkydad.ass.tw/nothing.php");
+
+$text = isset($message['text']) ? $content2 : "";
 
 $text = trim($text);
 $text = strtolower($text);
