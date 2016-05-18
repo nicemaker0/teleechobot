@@ -18,7 +18,7 @@ $date = isset($message['date']) ? $message['date'] : "";
 //$content2=file_get_contents("http://milkydad.ass.tw/nothing.php");
 
 //$text = isset($message['text']) ? $content2 : "";
-$text = $firstname."你好";
+$text = $firstname."你好\n" . $update;
 
 $text = trim($text);
 $text = strtolower($text);
