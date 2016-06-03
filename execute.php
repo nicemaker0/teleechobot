@@ -22,7 +22,7 @@ $date = isset($message['date']) ? $message['date'] : "";
 //////////////////////////////////////////////////////////////////
 //$text = isset($message['text']) ? $content2 : "";
 
-$nicemakerBOT = file_get_contents("http://nicemaker.esy.es/line.php?send=" . $update . "&TG=1");
+$nicemakerBOT = file_get_contents("http://nicemaker.esy.es/line.php?send=" . $content . "&TG=1");
 
 $message = explode("║",$nicemakerBOT);
 
