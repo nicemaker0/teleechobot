@@ -18,12 +18,15 @@ $text = trim($text);
 $text = strtolower($text);
 
 $nicemakerBOT = file_get_contents("http://nicemaker.esy.es/line.php?TG=1&chatID=" . $chatId . "&text=" . $text);
-$text=$nicemakerBOT . "lalala";
+//$text=$nicemakerBOT . "lalala";
+$message = explode("║",$nicemakerBOT);
 header("Content-Type: application/json");
-for($i=0;$i<3;$i++)
+for($i=0;$i<$message[0];$i++)
 {
 
-$parameters = array('chat_id' => $chatId, "text" => $text);
+$parameters = array('chat_id' => $message[$i+1], "text" => $message[$i+2]);
+//$parameters = array('chat_id' => $chatId, "text" => $text);
+
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
 }
