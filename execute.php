@@ -33,15 +33,18 @@ for($i=0;$i<$message[0];$i=$i+2){
 //	$temp= explode("║",$massage[$i]);
 //	$sendto=$temp[0];
 //	$sendtext=$temp[1];
-sendMessage($header, $message[$i+1], $message[$i+2]);
-} 
+//sendMessage($header, $message[$i+1], $message[$i+2]);
 
+header("Content-Type: application/json");
+$parameters = array('chat_id' => $message[$i+1], "text" => $message[$i+2]);
+$parameters["method"] = "sendMessage";
+echo json_encode($parameters);
+  
+} 
+/*
 $text = $firstname."你好\n" . $content ."\ntalkingID：" . $talkingId . "\nChatID=" . $chatId;
 
 $text = trim($text);
 $text = strtolower($text);
+*/
 
-header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => $text);
-$parameters["method"] = "sendMessage";
-echo json_encode($parameters);
