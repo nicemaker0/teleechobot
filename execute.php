@@ -16,9 +16,13 @@ $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
+
+$nicemakerBOT = file_get_contents("http://nicemaker.esy.es/line.php?send=" . $content . "&TG=1");
+$text=$nicemakerBOT . "lalala";
+header("Content-Type: application/json");
 for($i=0;$i<3;$i++)
 {
-header("Content-Type: application/json");
+
 $parameters = array('chat_id' => $chatId, "text" => $text);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
