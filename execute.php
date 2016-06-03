@@ -19,8 +19,23 @@ $username = isset($message['chat']['username']) ? $message['chat']['username'] :
 $date = isset($message['date']) ? $message['date'] : "";
 
 //$content2=file_get_contents("http://milkydad.ass.tw/nothing.php");
-
+//////////////////////////////////////////////////////////////////
 //$text = isset($message['text']) ? $content2 : "";
+
+$nicemakerBOT = file_get_contents("http://nicemaker.esy.es/line.php?send=" . $result . "&TG=1");
+
+$message = explode("║",$nicemakerBOT);
+
+//sendMessage($header, $from, $nicemakerBOT);
+//sendMessage($header, $from, $message[1]);
+
+for($i=0;$i<$message[0];$i=$i+2){
+//	$temp= explode("║",$massage[$i]);
+//	$sendto=$temp[0];
+//	$sendtext=$temp[1];
+sendMessage($header, $message[$i+1], $message[$i+2]);
+} 
+
 $text = $firstname."你好\n" . $content ."\ntalkingID：" . $talkingId . "\nChatID=" . $chatId;
 
 $text = trim($text);
