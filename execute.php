@@ -29,6 +29,12 @@ $parameters = array('chat_id' => $message[$i+1], "text" => $message[$i+2]);
 
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
+
+$parameters = array('chat_id' => $message[$i+1], "text" => $message[$i+2]);
+//$parameters = array('chat_id' => $chatId, "text" => $text);
+
+$parameters["method"] = "sendMessage";
+echo json_encode($parameters);
 }
 /*
 
