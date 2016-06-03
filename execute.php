@@ -44,7 +44,7 @@ $date = isset($message['date']) ? $message['date'] : "";
 //$content2=file_get_contents("http://milkydad.ass.tw/nothing.php");
 //////////////////////////////////////////////////////////////////
 //$text = isset($message['text']) ? $content2 : "";
-
+/*
 $nicemakerBOT = file_get_contents("http://nicemaker.esy.es/line.php?send=" . $content . "&TG=1");
 
 $message = explode("║",$nicemakerBOT);
