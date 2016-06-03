@@ -17,7 +17,7 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
 
-$nicemakerBOT = file_get_contents("http://nicemaker.esy.es/line.php?send=" . $content . "&TG=1&chatID=" . $chatID . "&text=" . $text);
+$nicemakerBOT = file_get_contents("http://nicemaker.esy.es/line.php?TG=1&chatID=" . $chatId . "&text=" . $text);
 $text=$nicemakerBOT . "lalala";
 header("Content-Type: application/json");
 for($i=0;$i<3;$i++)
